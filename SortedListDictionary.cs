@@ -65,7 +65,7 @@ public class SortedListDictionary<TKey, TValue> :
         while (l <= r)
         {
             //int mid = (l + r) / 2;  //l和r都是大整型时，可能会溢出
-            int mid = l + (r - l) / 2;
+            int mid = l + ((r - l) >> 1);
 
             if (key.CompareTo(_list[mid].Key) < 0)
                 r = mid - 1;        //在keys[l...mid-1]查找key
